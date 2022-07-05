@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_dataType3.html</title>
+    <script>
+        /*
+            한명의 회원 정보라고 가정하자
+            번호, 이름, 성별
+            1, a, woman
+        */
+       let customInfo = [];
+       let customDict = {};
+       let num = 1;
+       let name = 'a';
+       let isMan = false;
+
+       // 하나의 변수명으로 여러개의 값을 한번에 관리할 수 있다.
+       customInfo.push([num, name, isMan]);
+       customDict = {
+        num: num,
+        name: name,
+        isMan: isMan
+       };
+
+       let a1 = customDict;
+       let a2 = customDict.num;
+       let a3 = customDict.name;
+       let a4 = customDict.isMan;
+
+       // object 특정 key값으로 변수를 참조할 수 있다.
+       let aa = {
+        num: a2,
+        name: a3,
+        isMan: a4
+       };
+       let aa2 = {num, name, isMan};
+    </script>
+</head>
+<body>
+    <h1>javascript 데이터 type</h1>
+</body>
+</html>

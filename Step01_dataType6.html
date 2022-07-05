@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_dataType6.html</title>
+    <script>
+        /*
+            특정 시점에 일괄 실행할 javascript 를 미리 준비해 놓기 위해서는
+            function type data 가 필요하다.
+        */
+        // number type data를 만들어서 num1이라는 이름의 변수에 대입하기
+        let num1 = 10;
+        // string type data를 만들어서 name1이라는 이름의 변수에 대입하기
+        let name1 = "a1";
+        // object type data를 만들어서 member1이라는 이름의 변수에 대입하기
+        let memeber1 = {};
+        // function type data를 만들어서 f1이라는 이름의 변수에 대입하기
+        let f1 = function(num) {
+            console.log("하나");
+            console.log("두울");
+            console.log("세엣");
+
+            newNum = num + 1;
+
+            return newNum;
+        };
+
+        let f2 = f1;
+        let result = f1();
+        let a1 = 10;
+        let a2 = 10;
+    </script>
+</head>
+<body>
+    <h1>javascript data type</h1>
+    <button type="submit" onclick="f1();">눌러보셈</button>
+</body>
+</html>

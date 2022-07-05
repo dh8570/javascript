@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_dataType5.html</title>
+    <script>
+        // 배열에는 주로 한가지 type의 데이터만 저장한다.
+        let nums = [10, 20, 30, 40, 50];
+        let names = ['a1', 'a2', 'a3'];
+        let data = [true, false, true, true];
+
+        // 회원 목록을 담고 싶다면
+        let members = [
+            {name: names[0], num: nums[0], data: data[0]},
+            {name: names[1], num: nums[1], data: data[1]},
+            {name: names[2], num: nums[2], data: data[2]}
+        ];
+        let a1 = typeof(members);
+        let a2 = typeof(members[0]);
+        let a3 = typeof(members[0].name);
+        let a4 = typeof(members[0].num);
+        let a5 = typeof(members[0].data);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

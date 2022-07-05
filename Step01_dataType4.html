@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_dataType4.html</title>
+    <script>
+        // 상품 하나의 정보라고 가정
+        // 순서가 중요치 않은 데이터
+        let obj = {
+            num: 1,
+            name: "바나나",
+            price: "2000원"
+        };
+
+        /*
+            좋아하는 음식 목록
+            삼겹살, 치킨, 냉면, 소고기
+        */
+       let foods = ['소고기', '냉면', '치킨', '삼겹살'];
+
+       let a1 = foods[0];
+       let a2 = foods[1];
+
+       foods[0] = '맛있는 소고기';
+       foods[1] = '맛있는 냉면';
+
+       let size = foods.lenght;
+       foods.push('마라샹궈');
+       foods.splice(2, 1);
+    </script>
+</head>
+<body>
+    <h1>javascript data type</h1>
+</body>
+</html>

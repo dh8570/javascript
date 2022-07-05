@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_dataType7.html</title>
+    <script>
+        // 아직 만들어지지 않아서 호출 불가
+        // f1();
+        // 최우선적으로 생성되어 호출 가능
+        f2();
+
+        let f1 = function() {
+            console.log("f1() 함수 호출됨");
+        }
+
+        function f2() {
+            console.log("f2() 함수 호출됨");
+        }
+        // 줄여서 표현 가능
+        let f3 = () => {
+            console.log("f3() 함수 호출됨");
+        };
+    </script>
+</head>
+<body>
+
+</body>
+</html>

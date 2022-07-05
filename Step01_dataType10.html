@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_dataType10.html</title>
+    <script>
+        // function printMsg(msg)에서 msg는 매개 변수이다.
+        // 함수에 전달되는 값을 전달 받을 변수이며 let을 선언하지 않는다.
+        // 매개 변수는 해당 함수 안에서만 사용할 수 있다.
+        // 함수를 호출하는 시점에 만들어지고 함수가 종료되면 사라진다.
+        
+        // 선언만하고 아무 값도 넣지 않으면 undefined를 갖는다.
+        let a;
+        
+        let printMsg = function(msg) {
+            for(let i=1; i<msg+1; i++) {
+                for(let j=0; j<i; j++) {
+                    console.log('*');
+                }
+                console.log('');
+            }
+        };
+
+        // 함수 호출하면서 string type 데이터를 즉석에서 만들어 전달
+        printMsg("aa");
+        // 함수 호출 이전에 string type 데이터를 변수로 선언하여 전달
+        let str = 'aa';
+        printMsg(str);
+
+        function printSum(num1, num2) {
+            let result = num1 + num2;
+            console.log(result);
+            let info = num1 + "과 " + num2 + "의 합은 " + result + "이다.";
+            console.log(info);
+            return result;
+        }
+    </script>
+</head>
+<body>
+    <h1>javascript data type</h1>
+</body>
+</html>
