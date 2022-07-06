@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_dataType11.html</title>
+    <script>
+        function modify() {
+            let isModify = confirm("수정할까요?");
+            if(isModify == true) {
+                let modifyText = prompt("수정할 텍스트를 입력하세요");
+                let Htag = document.getElementById('write-input');
+                Htag.innerText = modifyText;
+            }
+        }
+
+        function remove() {
+            let isDelete = confirm("삭제할까요?");
+            console.log(isDelete);
+            if(isDelete == true) {
+                let Htag = document.getElementById('write-input');
+                Htag.innerText = "";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1 id="write-input">javascript data type</h1>
+    <button type="submit" onclick="modify();">수정</button>
+    <button type="submit" onclick="remove();">삭제</button>
+</body>
+</html>
