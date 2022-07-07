@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_example2.html</title>
+    <script>
+        function send() {
+            let inputText = document.querySelector('#one').value;
+            document.querySelector('#two').innerText = inputText;
+        }
+
+        function clearAll() {
+            document.querySelector('#one').value = "";
+            document.querySelector('#two').innerText = "";
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="one">
+    <button onclick="send();">전송</button>
+    <p id="two"></p>
+    <button onclick="clearAll();">삭제</button>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example3.html</title>
+    <style>
+        div{
+            transition: font-size 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div>div1</div>
+    <div>div2</div>
+    <div>div3</div>
+    <div>div4</div>
+    <div>div5</div>
+    <div>div6</div>
+    <div>div7</div>
+    <div>div8</div>
+    <div>div9</div>
+    <div>div10</div>
+    <div>div11</div>
+    <div>div12</div>
+    <div>div13</div>
+    <div>div14</div>
+    <div>div15</div>
+    <div>div16</div>
+    <div>div17</div>
+    <div>div18</div>
+    <div>div19</div>
+    <div>div20</div>
+    <button id="changeBtn">바꾸기</button>
+    <button id="resetBtn">리셋</button>
+    <script>
+        let text = "";
+        let count = 0;
+
+        document.querySelector('#changeBtn').addEventListener('click', () => {
+            let divArr = document.querySelectorAll('div');
+            for(let i=0; i<20; i++) {
+                divArr[i].innerText = "aa";
+            }
+        });
+
+        window.addEventListener('keydown', (e) => {
+            let divArr = document.querySelectorAll('div');
+            if(e.key == 'Backspace') {
+                divArr.forEach((divTag, i) => {
+                    let textLeng = divTag.innerText.length;
+                    let backText = divTag.innerText.slice(0, textLeng-1);
+                    text = backText;
+                    divTag.innerText = text;
+                    // count -= 1;
+                    // divArr[i].style.fontSize = count+'px';
+                });
+            } else {
+                text = text + e.key;
+                divArr.forEach((divTag, i) => {
+                    divArr[i].innerText = text.slice(0, text.length-i);
+
+                    let randomArr = [];
+                    for(let i=0; i<3; i++) {
+                        let randomValue = Math.floor(Math.random() * 255 + 1);
+                        randomArr.push(randomValue);
+                    }
+                    divArr[i].style.color = 'rgb(' + randomArr[0] + ',' + randomArr[1] + ',' + randomArr[2] + ')';
+                    // count += 1;
+                    // divArr[i].style.fontSize = count+'px';
+                });
+            }
+        })
+
+        document.querySelector('#resetBtn').addEventListener('click', () => {
+            let divArr = document.querySelectorAll('div');
+            divArr.forEach(divTag => {
+                divTag.innerText = "리셋";
+                text = "";
+            });
+        });
+    </script>
+</body>
+</html>

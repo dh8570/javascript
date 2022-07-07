@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_event3.html</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+        }
+
+        #test{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            background-color: blue;
+            /* transform: translate(-50%, -50%); */
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="myDiv"></div>
+    <div id="test"></div>
+    <button onclick="callFunc();"></button>
+    <script>
+        let box1 = document.querySelector('#myDiv');
+        let x, y, randomColor;
+
+        box1.addEventListener('mousedown', function() {
+            box1.style.backgroundColor = 'rgb(' + x + ',' + y + ',' + randomColor + ')';
+        })
+
+        box1.addEventListener('mouseup', function() {
+            box1.style.backgroundColor = 'white';
+        })
+
+        box1.addEventListener('mousemove', function(event) {
+            const mouseX = event.clientX;
+            const mouseY = event.clientY;
+            text = "x: " + mouseX + ", y: " + mouseY;
+            
+            let testDiv = document.querySelector('#test');
+            testDiv.style.left = mouseX + 'px';
+            testDiv.style.top = mouseY + 'px';
+            let randomNum = Math.floor(Math.random() * 255 + 0);
+            randomColor = randomNum;
+            testDiv.style.left = mouseX + 'px';
+            x = mouseX;
+            y = mouseY;
+            testDiv.style.backgroundColor = 'rgb(' + mouseX + ',' + mouseY + ',' + randomNum + ')';
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example.html</title>
+</head>
+<body>
+    <button id="plusBtn">증가</button>
+    <p id="console">0</p>
+    <script>
+        let count = 0;
+
+        document.querySelector("#plusBtn").addEventListener("mousemove", function() {
+            count += 1;
+            let btnValue = document.querySelector('#console');
+            btnValue.innerText = count;
+            btnValue.style.fontSize = count+'px';
+        });
+    </script>
+</body>
+</html>

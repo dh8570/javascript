@@ -6,6 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Step01_dataType11.html</title>
     <script>
+        function addTag() {
+            let isAdd = confirm("사이트 이동 버튼을 만들까요?");
+            if(isAdd == true) {
+                let siteName = prompt("이동할 Site 이름을 입력하세요");
+                let siteURL = prompt("이동할 URL 주소를 입력하세요");
+                let motherDiv = document.querySelector('#moveBtn');
+                let formTag = document.createElement('form');
+                formTag.setAttribute('action', 'https://' + siteURL);
+                formTag.style.margin = 10+'px';
+                
+                let buttonTag = document.createElement('button');
+                buttonTag.setAttribute('type', 'submit');
+                buttonTag.innerText = siteName;
+
+                formTag.appendChild(buttonTag);
+                motherDiv.appendChild(formTag);
+            }
+        }
+
         function modify() {
             let isModify = confirm("수정할까요?");
             if(isModify == true) {
@@ -27,6 +46,8 @@
 </head>
 <body>
     <h1 id="write-input">javascript data type</h1>
+    <div id="moveBtn"></div>
+    <button type="submit" onclick="addTag();">추가</button>
     <button type="submit" onclick="modify();">수정</button>
     <button type="submit" onclick="remove();">삭제</button>
 </body>
