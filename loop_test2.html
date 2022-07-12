@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop_test2.html</title>
+</head>
+<body>
+    <script>
+        let nums = [10, 20, 30, 40, 50];
+
+        nums.forEach((value, index) => {
+            let tmp = value;
+            console.log(`${tmp} aa`);
+        });
+
+        for(let i=0; i<nums.length; i++) {
+            let tmp = nums[i];
+            console.log(tmp);
+        }
+
+        let members = [
+            {num: 1, name:'a1'},
+            {num: 2, name:'a2'},
+            {num: 3, name:'a3'}
+        ];
+
+        for(let i=0; i<members.length; i++) {
+            console.log(`${members[i].num} \n${members[i].name}`);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop_test.html</title>
+</head>
+<body>
+    <h1>반복문 테스트1</h1>
+    <button onclick="clicked();">버튼</button>
+    <script>
+        let a = 0;
+
+        document.querySelector('button').addEventListener('click', function() {
+            this.innerText = `${a}번 호출`;
+        });
+
+        function clicked() {
+            console.log(`clicked() ${a} 호출`);
+            a++;
+        }
+
+        /*
+            1. 초기값 지정
+            let i=0 은 for문 안에서만 사용할 수 있는 local variable이다.
+            for 문이 종료되면 i 는 사라진다.
+            for 문에 실행 순서가 왔을 때 최초 한번만 실행되는 초기값이다.
+
+            2. 조건문
+            i<5 가 false가 될 때까지 실행한다.
+
+            3. 증감연산
+            i++ 또는 i--로 증감시킬 수 있다.
+        */
+        for(let i=0; i<5; i++) {
+            console.log(i);
+        }
+
+        console.log('javascript 가 로딩되었습니다.');
+    </script>
+</body>
+</html>
