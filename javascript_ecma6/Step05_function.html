@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step05_function.html</title>
+</head>
+<body>
+    <script>
+        function showInfo(num, name, addr) {
+            console.log(`${num} | ${name} | ${addr}`);
+        }
+
+        function useFunc(...args) {
+            console.log(args);
+        };
+
+        useFunc(1, 2, 3, 'a');
+    </script>
+</body>
+</html>

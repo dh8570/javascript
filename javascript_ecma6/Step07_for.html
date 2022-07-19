@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step07_for.html</title>
+</head>
+<body>
+    <script>
+        let names=['a1', 'a2', 'a3'];
+
+        for(let i=0; i<names.length; i++) {
+            console.log(names[i]);
+        }
+
+        for(let i in names) {
+            console.log(names[i]);
+        }
+
+        names.forEach((value) => {
+            console.log(value);
+        });
+
+        for(let value of names) {
+            console.log(value);
+        }
+    </script>
+</body>
+</html>

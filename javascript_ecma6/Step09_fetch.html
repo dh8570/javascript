@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step09_fetch.html</title>
+</head>
+<body>
+    <h1>친구 목록 입니다.</h1>
+    <button id="getBtn">불러오기</button>
+    <ul id="friendList">
+
+    </ul>
+    <script>
+        fetch("friends.json")
+            .then(function(res) {return res.json();})
+            .then((data) => {
+                data.forEach((value, index) => {
+                    let li = document.createElement('li');
+                    li.innerText = value;
+                    document.querySelector('#friendList').append(li);
+                });
+            });
+        
+        document.querySelector('#getBtn').addEventListener('click', () => {
+            fetch("friends.json")
+            .then(function(res) {return res.json();})
+            .then((data) => {
+                data.forEach((value, index) => {
+                    let li = document.createElement('li');
+                    li.innerText = value;
+                    document.querySelector('#friendList').append(li);
+                });
+            });
+        });
+        // arr.forEach((value, index) => {
+        //     let li = document.createElement('li');
+        //     li.innerText = value;
+        //     document.querySelector('#friendList').append(li);
+        // });
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step08_promise2.html</title>
+</head>
+<body>
+    <button>aa</button>
+    <script>
+        function order(menu, callback) {
+            const delay = Math.floor(Math.random() * 5000 + 5000);
+            setTimeout(() => {
+                console.log(`${menu}가 준비되었습니다.`);
+                callback(menu);
+            }, delay);
+        }
+
+        function orderProm(menu, reorder) {
+            if(reorder == false) {
+                return new Promise((resolve, reject) => {
+                    let status = Math.floor(Math.random() * 2);
+                    if(status == 0) {
+                        setTimeout(() => {
+                            console.log(`${menu}가 소진되었습니다.`);
+                        }, 2000);
+                        return reject(menu);
+                    }
+                    order(menu, resolve);
+                });
+            } else {
+                return new Promise((resolve, reject) => {
+                    order(menu+'(추가)', resolve);
+                });
+            }
+        }
+
+        orderProm('밀크티', false)
+            .catch((menu) => {return orderProm(menu, true);})
+            .then(() => {return orderProm('샌드위치', false);})
+            .catch((menu) => {return orderProm(menu, true);})
+            .then(() => {return orderProm('아이스크림', false);})
+            .catch((menu) => {return orderProm(menu, true);})
+            .then(() => {return console.log('종료');});
+
+
+
+
+        // function orderPromise(menu) {
+        //     return new Promise((resolve, reject) => {
+        //         const delay = Math.floor(Math.random() * 5000 + 5000);
+        //         let status = Math.floor(Math.random() * 2);
+        //         setTimeout(() => {
+        //             console.log(`${menu}가 준비되었습니다.`);
+        //             if(status == 0) return reject(menu);
+        //             resolve();
+        //         }, delay);
+        //     });
+        // }
+
+        // function reOrder(menu) {
+        //     return new Promise((resolve, reject) => {
+        //         const delay = Math.floor(Math.random() * 5000 + 5000);
+        //         setTimeout(() => {
+        //             console.log(`${menu}가 다시 준비되었습니다.`);
+        //             resolve();
+        //         }, delay);
+        //     });
+        // }
+
+        // orderPromise('밀크티')
+        //     .catch(function(menu) {console.log(`${menu}가 소진되었습니다.`); return reOrder(menu);})
+        //     .then(function() {return orderPromise('샌드위치');})
+        //     .catch(function(menu) {console.log(`${menu}가 소진되었습니다.`); return reOrder(menu);})
+        //     .then(function() {return orderPromise('아이스크림');})
+        //     .catch(function(menu) {console.log(`${menu}가 소진되었습니다.`); return reOrder(menu);})
+        //     .then(function() {console.log('종료');});
+    </script>
+</body>
+</html>
